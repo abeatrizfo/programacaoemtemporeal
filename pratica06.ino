@@ -1,5 +1,6 @@
-#include <Arduino.h>
-#include <FreeRTOS.h>
+#include <stdio.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
 #include <semphr.h>
 
 int currentSignal = 0;
@@ -16,7 +17,7 @@ void setVehicleSignal();
 void setPedestrianSignal();
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   pedestrianSemaphore = xSemaphoreCreateBinary();
   signalMutex = xSemaphoreCreateMutex();
@@ -26,6 +27,7 @@ void setup() {
 }
 
 void loop() {
+  
 }
 
 void vehicleTaskFunction(void* parameter) {

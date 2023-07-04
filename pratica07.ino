@@ -1,5 +1,6 @@
-#include <FreeRTOS.h>
-#include <task.h>
+#include <stdio.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
 #include <timers.h>
 
 #define MOTOR1_LED_PIN 21
@@ -33,7 +34,7 @@ void setup() {
 }
 
 void loop() {
-  // Vazio
+
 }
 
 void vTask1(void *pvParameters) {
